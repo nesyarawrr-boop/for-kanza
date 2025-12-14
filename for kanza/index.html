@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kanza</title>
+    <style>
+        /* --- CSS Global Styling & Setup --- */
+        :root {
+            --primary-red: #d9534f;
+            --secondary-green: #5cb85c;
+            --love-pink: #ff69b4;
+            --bg-color: #fce4ec; /* Background pink muda */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            overflow-y: auto;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        /* --- Hiasan Background (Glow/Blur) --- */
+        .decoration-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            opacity: 0.5;
+            filter: blur(80px);
+            z-index: 1;
+            animation: pulse 5s infinite alternate;
+        }
+
+        .top-left {
+            top: 5%;
+            left: 5%;
+            background-color: #f7a3b3; /* Pink lebih cerah */
+        }
+
+        .bottom-right {
+            bottom: 5%;
+            right: 5%;
+            background-color: #c091f0; /* Ungu soft */
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1.0); opacity: 0.4; }
+            100% { transform: scale(1.1); opacity: 0.6; }
+        }
+
+        /* --- Kontainer Utama (Responsif) --- */
+        .container {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 90%; /* Ambil 90% lebar layar */
+            max-width: 450px; /* Batasi lebar maksimal untuk HP */
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 1.5s ease-out;
+            margin: 30px auto; /* Margin atas/bawah agar ada ruang scroll */
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95em; /* Ukuran font sedikit dikecilkan untuk HP */
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--secondary-green);
+        }
+
+        .button-container {
+            margin-top: 25px;
+        }
+
+        #forgivenessBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: var(--primary-red);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #forgivenessBtn:hover {
+            background-color: #c9302c;
+            transform: translateY(-1px);
+        }
+        
+        #thanksMessage {
+            margin-top: 20px;
+            font-size: 2em;
+            color: var(--secondary-green);
+            font-weight: 900;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* --- CSS Animasi Hujan Love --- */
+        .love-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .love {
+            position: absolute;
+            color: var(--love-pink);
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration-glow top-left"></div>
+    <div class="decoration-glow bottom-right"></div>
+
+    <div class="love-rain" id="loveRainContainer"></div>
+
+    <div class="container">
+        <h1>✮˚ ⋅ 🎀 ⋅ For Kanza... ‧ 🎀 ⋅ ˚✮</h1>
+        
+        <p>hiii kanza 👋🏻 mmm km ap kbrr?? semoga bike2 saja ya (｡ᵕ ◞ _◟) pertama, aku mau minta maaf sebesaar besarnya ke kamu atas segala perbuatanku di masa lalu, aku ngerasa diri aku yg dulu itu terlalu kekanak kanakan dan ga dewasa sama sekali.</p>
+        
+        <p>sikap aku yang dulu mungkin terjadi karna aku belum sepenuhnya dewasa but, apapun alasan dibalik itu aku bener-bener tulus mau minta maaf. Aku sadar, aku seringkali bertindak egois dan kurang ajar, terutama ketika aku tanpa sadar "memanfaatkan kebaikanmu" untuk hal-hal seperti ngajak kamu mabar atau top-up game. Aku minta maaf sebesar-besarnya.(•́ ᴖ •̀)</p>
+        <p>Perbuatan itu bener-bener ga pantes dan aku menyesal udh nyakitin kmu dengan cara itu. apalgi aku secara tiba2 bilang "kita udahan aja yuk" itu bnr2 oh shit r u insane Nesya?</p>
+        <p class="highlight">Tapi, aku juga mau berterima kasih banyak2 ke km ε(´｡•᎑•`)っ 💕. Meskipun hubungan kita singkat dan udh berakhir, kmu ngajarin aku banyak hal. Karena kamu, aku ngerasa beanr2 dicintai dengan segala cara, bahkan aku ngerasa km selalu menuruti segala permintaanku (っ- ‸ - ς) dan aku juga belajar dr hubungan ini bagaimana caranya menghargai seseorang. (｡•́‿ •̀｡)</p>
+
+        <p class="highlight">Dan yg paling ku inget itu pas aku bilang "aku suka cowo yg pinter masak" and suddenly u prove it, that u can cook properly. ٩(ˊᗜˋ*)و ♡ im so proud n happy! at that time.. also pas kita mabar. Kmu selalu memperlakukan aku seakan2 istimewa, kayak "The Only One" yang harus kamu jaga. tbh, Rasa aman dan perlindungan yg aku rasakan waktu itu ga pernah aku dapatkan dari orang lain. Kmu bener2 luar biasa dalam hal itu dan aku sangat berterima kasih (๑'ᵕ'๑)⸝*</p>
+        <p class="highlight">terlepas dari itu, intinya aku cm mau km tau klo waktu itu aku belajar banyak hal, dan aku udh diberi petunjuk sama Allah kok, dan aku yakin. aku mulai belajar jaga jarak dari lawan jenis, dan udah jalan 2 tahun ga pernah ada hubungan sm lawan jenis, like they say, people grow and change. and last makasi banyak ya atas doa nya (´｡•◡•｡`)♡</p>
+
+        <p>aku pikir people come and never go, but yeah.. kuharap kamu bs sukses di masa depan, dan bs bener2 fokus. also aku harap km ga ketemu cewe kyk aku, and aku bnr2 berharap km bs memaafkan kesalahanku di masa lalu. Aku mendoakan yang terbaik buat kmu, kanza.</p>
+        <p>see ya in the top .☘︎ ܁˖</p>
+
+        <div class="button-container">
+            <button id="forgivenessBtn">Aku maafin kok</button>
+        </div>
+
+        <div id="thanksMessage"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const forgivenessBtn = document.getElementById('forgivenessBtn');
+            const thanksMessage = document.getElementById('thanksMessage');
+
+            // --- Logika Tombol Maaf ---
+            forgivenessBtn.addEventListener('click', () => {
+                // Sembunyikan tombol
+                forgivenessBtn.style.display = 'none';
+
+                // Tampilkan pesan terima kasih
+                thanksMessage.textContent = '💖 MAKASIHH BANYAKKK KANZAAAAAAA 💖';
+                thanksMessage.style.opacity = 1;
+            });
+
+            // --- Logika Hujan Love (Love Rain Animation) ---
+            const loveRainContainer = document.getElementById('loveRainContainer');
+            const maxLoves = 50; 
+            
+            function createLove() {
+                const love = document.createElement('div');
+                love.classList.add('love');
+                love.innerHTML = '&#x2764;'; 
+
+                // Posisi dan Ukuran Acak
+                const size = Math.random() * 15 + 8; /* Ukuran love lebih kecil */
+                const duration = Math.random() * 10 + 5; 
+                
+                love.style.left = Math.random() * 100 + 'vw';
+                love.style.fontSize = size + 'px';
+                love.style.opacity = Math.random() * 0.6 + 0.3;
+                love.style.animationDuration = duration + 's';
+                love.style.animationDelay = Math.random() * 5 + 's';
+
+                loveRainContainer.appendChild(love);
+
+                // Hapus hati setelah selesai jatuh
+                setTimeout(() => {
+                    love.remove();
+                }, duration * 1000);
+            }
+
+            // Atur interval untuk menciptakan hati baru
+            function startLoveRain() {
+                setInterval(() => {
+                    if (loveRainContainer.children.length < maxLoves) {
+                        createLove();
+                    }
+                }, 500); 
+            }
+            
+            startLoveRain();
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ribbon Example</title>
+    <style>
+        :root {
+            --love-pink: #ff69b4; /* Warna Pita */
+            --darker-pink: #e04e9c; /* Warna Lipatan */
+        }
+
+        /* Hanya untuk contoh, agar pitanya terlihat */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fce4ec; 
+            padding: 50px;
+        }
+
+        .container-box {
+            position: relative;
+            width: 350px; /* Lebar kotak pesan simulasi */
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding-top: 50px; /* Ruang untuk Pita di atas */
+        }
+        
+        /* --- Custom Ribbon (Pita) Styling --- */
+        .ribbon {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20; 
+        }
+
+        .ribbon-content {
+            background: var(--love-pink);
+            color: white;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+            position: relative;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        /* Ujung Pita (Segitiga Lipatan) */
+        .ribbon-content::before, .ribbon-content::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; /* Jarak lipatan dari pita utama */
+            border-width: 8px 10px 0 10px; /* Ukuran segitiga */
+            border-style: solid;
+            z-index: -1;
+        }
+
+        .ribbon-content::before {
+            left: 0;
+            border-color: var(--darker-pink) transparent transparent transparent; /* Warna lebih gelap */
+        }
+
+        .ribbon-content::after {
+            right: 0;
+            border-color: var(--darker-pink) transparent transparent transparent;
+        }
+
+        /* Konten di bawah pita (opsional, hanya untuk contoh) */
+        .content-body {
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-box">
+        
+        <div class="ribbon">
+            <div class="ribbon-content">
+                💌 Pesan Istimewa dari Nesya 💌
+            </div>
+        </div>
+
+        <div class="content-body">
+            <p>Jadilah dirimu sendiri apa adanya.</p>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For kanza</title>
+    <style>
+        /* --- Definisi Variabel Warna --- */
+        :root {
+            --primary-red: #d9534f;
+            --secondary-green: #5cb85c;
+            --love-pink: #ff69b4;
+            --bg-color-light: #fce4ec; /* Pink muda */
+            --bg-color-lighter: #ffe0f0; /* Pink lebih muda */
+            --shadow-pink: rgba(255, 105, 180, 0.4);
+        }
+
+        /* --- Global Styling & Background --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            /* Efek Parallax Background dengan Gradient */
+            background-image: linear-gradient(135deg, var(--bg-color-light) 0%, var(--bg-color-lighter) 100%);
+            background-attachment: fixed; /* Kunci background */
+            overflow-y: auto;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        /* --- Kontainer Utama (Responsif) --- */
+        .container {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%; 
+            max-width: 450px;
+            text-align: center;
+            z-index: 10;
+            margin: 30px auto;
+            position: relative;
+            padding-top: 50px; 
+            animation: fadeIn 1.5s ease-out;
+
+            /* Hiasan Border Lembut (Soft Border) */
+            border: 2px solid var(--love-pink); 
+            outline: 3px dashed #ffd1dc; 
+            outline-offset: -10px; 
+            /* Drop Shadow yang lebih feminim */
+            box-shadow: 0 15px 40px var(--shadow-pink);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Ikon Sudut (Corner Decorations) --- */
+        .corner-deco {
+            position: absolute;
+            font-size: 1.5em;
+            opacity: 0.7;
+            z-index: 25;
+            color: var(--love-pink);
+        }
+
+        .top-left-deco { top: 15px; left: 15px; }
+        .top-right-deco { top: 15px; right: 15px; }
+        .bottom-left-deco { bottom: 15px; left: 15px; }
+        .bottom-right-deco { bottom: 15px; right: 15px; }
+
+        /* --- Custom Ribbon (Pita) Styling --- */
+        .ribbon {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 30; /* Paling atas */
+        }
+
+        .ribbon-content {
+            background: var(--love-pink);
+            color: white;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: center;
+            position: relative;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        /* Ujung Pita (Segitiga Lipatan) */
+        .ribbon-content::before, .ribbon-content::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; 
+            border-width: 8px 10px 0 10px; 
+            border-style: solid;
+            z-index: -1;
+        }
+
+        .ribbon-content::before {
+            left: 0;
+            border-color: #e04e9c transparent transparent transparent; 
+        }
+
+        .ribbon-content::after {
+            right: 0;
+            border-color: #e04e9c transparent transparent transparent;
+        }
+
+        /* --- Konten Teks --- */
+        h1 {
+            color: var(--primary-red);
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            margin-top: 0;
+        }
+
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 0.95em;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--secondary-green);
+        }
+
+        /* --- Tombol --- */
+        .button-container {
+            margin-top: 25px;
+        }
+
+        #forgivenessBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: var(--primary-red);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        #thanksMessage {
+            margin-top: 20px;
+            font-size: 2em;
+            color: var(--secondary-green);
+            font-weight: 900;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* --- CSS Animasi Hujan Love --- */
+    
